@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution items", ".solution items", "{8A94CE7F-9FA1-4B95-B5D0-F8AF4B19D463}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Nuget.config = Nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{D9E6AA12-2D95-4A5A-98D5-DA9449BD8FFE}"
+	ProjectSection(SolutionItems) = preProject
+		docker\.env = docker\.env
+		docker\docker-compose-minio.yaml = docker\docker-compose-minio.yaml
+		docker\docker-compose-api.yaml = docker\docker-compose-api.yaml
+		docker\docker-compose-nginxproxy.yaml = docker\docker-compose-nginxproxy.yaml
+		docker\docker-compose-postgresql.yaml = docker\docker-compose-postgresql.yaml
+		docker\docker-compose-rabbitmq.yaml = docker\docker-compose-rabbitmq.yaml
+		docker\docker-compose-seq.yaml = docker\docker-compose-seq.yaml
+		docker\minio.env = docker\minio.env
+		docker\docker-compose.yaml = docker\docker-compose.yaml
+		docker\docker-compose-worker.yaml = docker\docker-compose-worker.yaml
+		docker\postgresql.env = docker\postgresql.env
+		docker\rabbitmq.env = docker\rabbitmq.env
+		docker\serilog.env = docker\serilog.env
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5FA6E103-9BA1-420B-91A0-E56C1467D180}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9A02117D-2B0C-4836-95CD-706513F8C6F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Domain", "src\Rent.Service.Domain\Rent.Service.Domain.csproj", "{5F846DFD-8ECE-4269-A392-0A0E6848ECDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Infrastructure", "src\Rent.Service.Infrastructure\Rent.Service.Infrastructure.csproj", "{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Application", "src\Rent.Service.Application\Rent.Service.Application.csproj", "{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Api", "src\Rent.Service.Api\Rent.Service.Api.csproj", "{7608A637-3BBD-4AAC-9285-BCAD9E623F0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Integration.Test", "tests\Rent.Service.Integration.Test\Rent.Service.Integration.Test.csproj", "{5818A684-5BA1-4A37-9BA7-35E775538CAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Unit.Test", "tests\Rent.Service.Unit.Test\Rent.Service.Unit.Test.csproj", "{D5A795D2-6943-431B-B434-44ACDF7315F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Service.Worker", "src\Rent.Service.Worker\Rent.Service.Worker.csproj", "{FFAED3B5-892F-4D61-84D4-E9D0213B0548}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{BEA36BF3-E359-428E-9E56-4FCA7E60ADF2}"
+	ProjectSection(SolutionItems) = preProject
+		docs\database.png = docs\database.png
+		docs\swagger.png = docs\swagger.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F846DFD-8ECE-4269-A392-0A0E6848ECDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F846DFD-8ECE-4269-A392-0A0E6848ECDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F846DFD-8ECE-4269-A392-0A0E6848ECDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F846DFD-8ECE-4269-A392-0A0E6848ECDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7608A637-3BBD-4AAC-9285-BCAD9E623F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7608A637-3BBD-4AAC-9285-BCAD9E623F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7608A637-3BBD-4AAC-9285-BCAD9E623F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7608A637-3BBD-4AAC-9285-BCAD9E623F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5818A684-5BA1-4A37-9BA7-35E775538CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5818A684-5BA1-4A37-9BA7-35E775538CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5818A684-5BA1-4A37-9BA7-35E775538CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5818A684-5BA1-4A37-9BA7-35E775538CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A795D2-6943-431B-B434-44ACDF7315F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A795D2-6943-431B-B434-44ACDF7315F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A795D2-6943-431B-B434-44ACDF7315F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A795D2-6943-431B-B434-44ACDF7315F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFAED3B5-892F-4D61-84D4-E9D0213B0548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAED3B5-892F-4D61-84D4-E9D0213B0548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFAED3B5-892F-4D61-84D4-E9D0213B0548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAED3B5-892F-4D61-84D4-E9D0213B0548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9E6AA12-2D95-4A5A-98D5-DA9449BD8FFE} = {8A94CE7F-9FA1-4B95-B5D0-F8AF4B19D463}
+		{5F846DFD-8ECE-4269-A392-0A0E6848ECDF} = {5FA6E103-9BA1-420B-91A0-E56C1467D180}
+		{B1BFB24F-F380-4057-A75F-5CFEA92F6E5A} = {5FA6E103-9BA1-420B-91A0-E56C1467D180}
+		{08A8478D-5BE1-4DD6-A3C7-6DAEA610B02F} = {5FA6E103-9BA1-420B-91A0-E56C1467D180}
+		{7608A637-3BBD-4AAC-9285-BCAD9E623F0E} = {5FA6E103-9BA1-420B-91A0-E56C1467D180}
+		{5818A684-5BA1-4A37-9BA7-35E775538CAF} = {9A02117D-2B0C-4836-95CD-706513F8C6F6}
+		{D5A795D2-6943-431B-B434-44ACDF7315F7} = {9A02117D-2B0C-4836-95CD-706513F8C6F6}
+		{FFAED3B5-892F-4D61-84D4-E9D0213B0548} = {5FA6E103-9BA1-420B-91A0-E56C1467D180}
+		{BEA36BF3-E359-428E-9E56-4FCA7E60ADF2} = {8A94CE7F-9FA1-4B95-B5D0-F8AF4B19D463}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB3B3FE7-AAC9-4CBA-B4B3-9AF9D1138354}
+	EndGlobalSection
+EndGlobal

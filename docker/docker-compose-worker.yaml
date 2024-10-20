@@ -1,0 +1,29 @@
+services:
+
+  worker:
+    build:
+      context: ../.
+      dockerfile: src/Rent.Service.Worker/Dockerfile
+      args:
+        VERSION_CORE: ${VERSION_CORE}
+    image: rent-service-worker:${VERSION_CORE}
+    container_name: worker-${COMPOSE_PROJECT_NAME}
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: "4GB"
+    networks:
+      - nginxproxy
+    env_file:
+      - minio.env
+      - postgresql.env
+      - rabbitmq.env
+      - serilog.env
+    environment:
+      DOTNET_ENVIRONMENT: ${DOTNET_ENVIRONMENT}
+      Serilog__Properties__Application: "Rent.Service.Worker"
+
+networks:
+  nginxproxy:

@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Authors>Thiago Guislotti</Authors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NetToolsKit.Core" Version="2.0.17" />
+	</ItemGroup>
+
+</Project>

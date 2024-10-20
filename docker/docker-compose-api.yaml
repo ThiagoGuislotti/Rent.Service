@@ -1,0 +1,34 @@
+services:
+
+  api:
+    build:
+      context: ../.
+      dockerfile: src/Rent.Service.Api/Dockerfile
+      args:
+        VERSION_CORE: ${VERSION_CORE}
+    image: rent-service-api:${VERSION_CORE}
+    container_name: api-${COMPOSE_PROJECT_NAME}
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: "4GB"
+    networks:
+      - nginxproxy
+    ports:
+      - "5000:80"
+    env_file:
+      - minio.env
+      - postgresql.env
+      - rabbitmq.env
+      - serilog.env
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${DOTNET_ENVIRONMENT}
+      ASPNETCORE_URLS: http://+:80
+      VIRTUAL_HOST: localhost
+      VIRTUAL_PORT: 5000
+      Serilog__Properties__Application: "Rent.Service.Api"
+
+networks:
+  nginxproxy:

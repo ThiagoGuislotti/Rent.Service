@@ -1,0 +1,23 @@
+services:
+
+  nginxproxy:
+    image: nginxproxy/nginx-proxy
+    hostname: nginxproxy
+    container_name: nginxproxy-${COMPOSE_PROJECT_NAME}
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+
+networks:
+  nginxproxy:
+
+volumes:
+  certs:
+  vhost:
+  html:

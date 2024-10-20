@@ -1,0 +1,49 @@
+services:
+
+  nginxproxy:
+    extends:
+      file: docker-compose-nginxproxy.yaml
+      service: nginxproxy
+      
+  minio:
+    extends:
+      file: docker-compose-minio.yaml
+      service: minio
+
+  postgres:
+    extends:
+      file: docker-compose-postgresql.yaml
+      service: postgres
+
+  rabbitmq:
+    extends:
+      file: docker-compose-rabbitmq.yaml
+      service: rabbitmq
+      
+  seq:
+    extends:
+      file: docker-compose-seq.yaml
+      service: seq
+      
+  api:
+    extends:
+      file: docker-compose-api.yaml
+      service: api
+      
+  worker:
+    extends:
+      file: docker-compose-worker.yaml
+      service: worker
+
+networks:
+    nginxproxy:
+    
+# volumes => \\wsl.localhost\docker-desktop-data\data\docker\volumes
+volumes:
+  certs:
+  vhost:
+  html:
+  minio-data:
+  postgres-data:
+  rabbitmq-data:
+  seq-data:
