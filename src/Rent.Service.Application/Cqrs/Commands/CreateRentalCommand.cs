@@ -12,6 +12,9 @@ namespace Rent.Service.Application.Cqrs.Commands
         #endregion
 
         #region Propriedades Públicas
+        [JsonProperty("identificador")]
+        public string? Id { get; init; } = Guid.NewGuid().ToString();
+
         [JsonProperty("entregdor_id")]
         public required string DeliveryPersonId { get; init; }
 

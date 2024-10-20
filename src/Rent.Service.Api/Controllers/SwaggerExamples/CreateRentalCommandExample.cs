@@ -12,6 +12,7 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                 "Ok",
                 new CreateRentalCommand
                 {
+                    Id = "123456",
                     DeliveryPersonId = "123456",
                     MotorcycleId = "123456",
                     StartDate = DateTime.UtcNow.AddDays(1),
@@ -23,6 +24,7 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                 "BadRequest",
                 new CreateRentalCommand
                 {
+                    Id = "123456",
                     DeliveryPersonId = "123456",
                     MotorcycleId = "123456",
                     StartDate = DateTime.UtcNow.AddDays(1),

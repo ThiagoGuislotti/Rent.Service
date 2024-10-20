@@ -41,6 +41,10 @@ namespace Rent.Service.Application.Cqrs.Commands.Handles
             var repository = _unitOfWork.GetRepository<Rental>();
             var stringBuilder = new StringBuilder();
 
+            var entityExists = await repository.ExistsAsync(src => src.Id == command.Id, cancellationToken).ConfigureAwait(false);
+            if (entityExists)
+                stringBuilder.AppendLine($"Já existe uma Locação com Id: [{command.Id}].");
+
             var licenseCategory = await _unitOfWork
                 .GetRepository<DeliveryPerson>()
                 .SearchFirstOrDefaultAsync(
@@ -64,7 +68,6 @@ namespace Rent.Service.Application.Cqrs.Commands.Handles
 
             entity = entity with
             {
-                Id = Guid.NewGuid().ToString(),
                 DailyValue = _rentalPlanService.GetDailyValue(entity.Plan),
             };
 
