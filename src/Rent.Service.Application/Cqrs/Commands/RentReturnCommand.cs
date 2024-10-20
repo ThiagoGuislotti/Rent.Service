@@ -12,7 +12,7 @@ namespace Rent.Service.Application.Cqrs.Commands
         public string Id { get; init; } = string.Empty;
 
         [JsonProperty("data_devolucao")]
-        public required DateTimeOffset ReturnDate { get; init; }
+        public required DateTime ReturnDate { get; init; }
         #endregion
     }
 }

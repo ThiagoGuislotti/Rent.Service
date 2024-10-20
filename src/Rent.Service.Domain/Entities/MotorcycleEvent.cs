@@ -23,7 +23,7 @@ namespace Rent.Service.Domain.Entities
 
         [Required]
         [Column("created_at")]
-        public DateTimeOffset CreatedAt { get; init; } = DateTimeOffset.UtcNow;
+        public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
         #endregion
     }
 }

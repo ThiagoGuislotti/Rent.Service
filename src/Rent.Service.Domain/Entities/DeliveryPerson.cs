@@ -19,7 +19,7 @@ namespace Rent.Service.Domain.Entities
 
         [Required]
         [Column("date_of_birth")]
-        public required DateTimeOffset DateOfBirth { get; init; }
+        public required DateTime DateOfBirth { get; init; }
 
         [Required]
         [Column("driver_license_number")]

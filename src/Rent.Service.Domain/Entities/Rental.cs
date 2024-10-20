@@ -19,15 +19,15 @@ namespace Rent.Service.Domain.Entities
 
         [Required]
         [Column("start_date")]
-        public required DateTimeOffset StartDate { get; init; }
+        public required DateTime StartDate { get; init; }
 
         [Required]
         [Column("end_date")]
-        public required DateTimeOffset EndDate { get; init; }
+        public required DateTime EndDate { get; init; }
 
         [Required]
         [Column("expected_end_date")]
-        public required DateTimeOffset ExpectedEndDate { get; init; }
+        public required DateTime ExpectedEndDate { get; init; }
 
         [Required]
         [Column("plan")]
@@ -38,7 +38,7 @@ namespace Rent.Service.Domain.Entities
         public required int DailyValue { get; init; }
 
         [Column("return_date")]
-        public DateTimeOffset? ReturnDate { get; init; }
+        public DateTime? ReturnDate { get; init; }
         #endregion
     }
 }

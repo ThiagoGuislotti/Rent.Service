@@ -33,9 +33,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = 7
             };
 
@@ -58,9 +58,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = string.Empty,
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = 7
             };
 
@@ -84,9 +84,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = string.Empty,
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = 7
             };
 
@@ -110,9 +110,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(-1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(-1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = 7
             };
 
@@ -136,9 +136,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(-1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(-1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = 7
             };
 
@@ -162,9 +162,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(-1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(-1),
                 Plan = 7
             };
 
@@ -191,9 +191,9 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             {
                 DeliveryPersonId = Guid.NewGuid().ToString(),
                 MotorcycleId = Guid.NewGuid().ToString(),
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(1),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(1),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(1),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(1),
                 Plan = plan
             };
 
@@ -216,7 +216,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             var request = new RentReturnCommand
             {
                 Id = "locacao123",
-                ReturnDate = DateTimeOffset.UtcNow.AddDays(1)
+                ReturnDate = DateTime.UtcNow.AddDays(1)
             };
 
             // Act
@@ -237,7 +237,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             var request = new RentReturnCommand
             {
                 Id = string.Empty,
-                ReturnDate = DateTimeOffset.UtcNow.AddDays(1)
+                ReturnDate = DateTime.UtcNow.AddDays(1)
             };
 
             // Act
@@ -259,7 +259,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
             var request = new RentReturnCommand
             {
                 Id = "locacao123",
-                ReturnDate = DateTimeOffset.UtcNow.AddDays(-1)
+                ReturnDate = DateTime.UtcNow.AddDays(-1)
             };
 
             // Act

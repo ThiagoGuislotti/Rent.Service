@@ -15,7 +15,7 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                     Id = "123456",
                     Model = "Honda CG 160",
                     LicensePlate = "ABC-1234",
-                    Year = (short)DateTimeOffset.UtcNow.Year,
+                    Year = (short)DateTime.UtcNow.Year,
                 });
             yield return SwaggerExample.Create(
                 "BadRequest",
@@ -24,7 +24,7 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                     Id = "xxxxx",
                     Model = "Honda CG 160",
                     LicensePlate = "xxx",
-                    Year = (short)DateTimeOffset.UtcNow.Year,
+                    Year = (short)DateTime.UtcNow.Year,
                 });
         }
         #endregion

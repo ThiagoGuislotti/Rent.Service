@@ -17,7 +17,7 @@ namespace Rent.Service.Application.Cqrs.Views
         public required string Cnpj { get; init; }
 
         [JsonProperty("data_nascimento")]
-        public required DateTimeOffset DateOfBirth { get; init; }
+        public required DateTime DateOfBirth { get; init; }
 
         [JsonProperty("numero_cnh")]
         public required string DriverLicenseNumber { get; init; }

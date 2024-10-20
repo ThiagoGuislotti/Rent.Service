@@ -7,7 +7,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Validators
         public RentReturnValidator()
         {
             RuleFor(x => x.Id).NotEmpty();
-            RuleFor(x => x.ReturnDate).NotEmpty().GreaterThan(DateTimeOffset.UtcNow);
+            RuleFor(x => x.ReturnDate).NotEmpty().GreaterThan(DateTime.UtcNow);
         }
     }
 }

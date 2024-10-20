@@ -36,7 +36,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = cnpj,
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "71418707884",
                 DriverLicenseType = DriverLicenseCategory.B,
                 DriverLicenseBase64Image = "Qk1QAAAAAAQAAAAAAABAAAABAAAAAAAAAAEAAQAAAAAAAAA="
@@ -65,7 +65,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = identifier,
                 Name = "Thiago Guislotti",
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = DriverLicenseCategory.B,
             };
@@ -95,7 +95,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = name,
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = DriverLicenseCategory.B,
             };
@@ -126,7 +126,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = cnpj,
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = DriverLicenseCategory.B,
             };
@@ -156,7 +156,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(dateOfBirth),
+                DateOfBirth = DateTime.UtcNow.AddYears(dateOfBirth),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = DriverLicenseCategory.B,
             };
@@ -186,7 +186,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = driverLicenseNumber,
                 DriverLicenseType = DriverLicenseCategory.A,
             };
@@ -213,7 +213,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = driverLicenseType,
             };
@@ -241,7 +241,7 @@ namespace Rent.Service.Unit.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
                 Cnpj = "22055776000141",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "1234567",
                 DriverLicenseType = DriverLicenseCategory.B,
                 DriverLicenseBase64Image = driverLicenseImage

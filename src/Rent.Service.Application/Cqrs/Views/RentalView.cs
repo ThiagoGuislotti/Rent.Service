@@ -15,13 +15,13 @@ namespace Rent.Service.Application.Cqrs.Views
         public required string MotorcycleId { get; init; }
 
         [JsonProperty("data_inicio")]
-        public required DateTimeOffset StartDate { get; init; }
+        public required DateTime StartDate { get; init; }
 
         [JsonProperty("data_termino")]
-        public required DateTimeOffset EndDate { get; init; }
+        public required DateTime EndDate { get; init; }
 
         [JsonProperty("data_previsao_termino")]
-        public required DateTimeOffset ExpectedEndDate { get; init; }
+        public required DateTime ExpectedEndDate { get; init; }
 
         [JsonProperty("plano")]
         public required byte Plan { get; init; }
@@ -30,7 +30,7 @@ namespace Rent.Service.Application.Cqrs.Views
         public required decimal DailyValue { get; init; }
 
         [JsonProperty("data_devolucao")]
-        public DateTimeOffset? ReturnDate { get; init; }
+        public DateTime? ReturnDate { get; init; }
         #endregion
     }
 }

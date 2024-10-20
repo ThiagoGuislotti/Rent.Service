@@ -27,7 +27,7 @@ namespace Rent.Service.Infrastructure.Services
         #endregion
 
         #region Métodos/Operadores Públicos
-        public int CalculateTotalCost(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate)
+        public int CalculateTotalCost(RentalPlanType planType, DateTime startDate, DateTime endDate)
         {
             if (endDate < startDate)
                 throw new ArgumentException("A data de término não deve ser inferior à data de início.");
@@ -48,7 +48,7 @@ namespace Rent.Service.Infrastructure.Services
             return totalCost;
         }
 
-        public int CalculatePenalty(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate)
+        public int CalculatePenalty(RentalPlanType planType, DateTime startDate, DateTime endDate)
         {
             var usedDays = GetUsedDays(startDate, endDate);
             var unusedDays = (int)planType - usedDays;
@@ -75,12 +75,12 @@ namespace Rent.Service.Infrastructure.Services
                 _ => throw new ArgumentOutOfRangeException(nameof(planType), planType, null)
             };
 
-        public DateTimeOffset GetExpectedEndDate(RentalPlanType planType, DateTimeOffset startDate)
+        public DateTime GetExpectedEndDate(RentalPlanType planType, DateTime startDate)
             => startDate.AddDays((int)planType);
         #endregion
 
         #region Métodos/Operadores Privados
-        private static int GetUsedDays(DateTimeOffset startDate, DateTimeOffset endDate)
+        private static int GetUsedDays(DateTime startDate, DateTime endDate)
             => Math.Max((int)Math.Ceiling((endDate - startDate).TotalDays), 1);
         #endregion
     }

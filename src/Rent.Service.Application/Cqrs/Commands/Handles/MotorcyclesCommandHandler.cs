@@ -80,7 +80,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Handles
             if (entity.IsNullOrEmpty())
                 return ResponseResult.ErrorResult($"Moto não encontrada para o Id: [{command.Id}].");
 
-            entity = entity with { LicensePlate = command.LicensePlate, UpdatedAt = DateTimeOffset.UtcNow };
+            entity = entity with { LicensePlate = command.LicensePlate, UpdatedAt = DateTime.UtcNow };
 
             var result = await repository
                 .UpdateAsync(entity, cancellationToken)

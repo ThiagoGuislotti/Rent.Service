@@ -109,7 +109,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Handles
                     return ResponseResult.ErrorResult("Erro ao salver imagem no storage.");
             }
 
-            entity = entity with { WithDriverLicenseImage = true, UpdatedAt = DateTimeOffset.UtcNow };
+            entity = entity with { WithDriverLicenseImage = true, UpdatedAt = DateTime.UtcNow };
             var result = await repository
                 .UpdateAsync(entity, cancellationToken)
                 .ThenDoAsync(() => _unitOfWork.CommitAsync(cancellationToken: cancellationToken))

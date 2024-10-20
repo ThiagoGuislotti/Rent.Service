@@ -14,9 +14,9 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                 {
                     DeliveryPersonId = "123456",
                     MotorcycleId = "123456",
-                    StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                    EndDate = DateTimeOffset.UtcNow.AddDays(8).Date,
-                    ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(8).Date,
+                    StartDate = DateTime.UtcNow.AddDays(1),
+                    EndDate = DateTime.UtcNow.AddDays(8).Date,
+                    ExpectedEndDate = DateTime.UtcNow.AddDays(8).Date,
                     Plan = 7
                 });
             yield return SwaggerExample.Create(
@@ -25,9 +25,9 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                 {
                     DeliveryPersonId = "123456",
                     MotorcycleId = "123456",
-                    StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                    EndDate = DateTimeOffset.UtcNow.AddDays(8).Date,
-                    ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(8).Date,
+                    StartDate = DateTime.UtcNow.AddDays(1),
+                    EndDate = DateTime.UtcNow.AddDays(8).Date,
+                    ExpectedEndDate = DateTime.UtcNow.AddDays(8).Date,
                     Plan = 0
                 });
         }

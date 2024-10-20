@@ -40,7 +40,7 @@ namespace Rent.Service.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            #region EntityConfiguration
+            #region Entity Configuration
             modelBuilder.Ignore<Notification>();
             modelBuilder.Ignore<Event>();
 
@@ -83,6 +83,23 @@ namespace Rent.Service.Infrastructure.Context
                        .HasForeignKey(r => r.MotorcycleId)
                        .OnDelete(DeleteBehavior.Cascade);
             });
+            #endregion
+
+            #region Timestamp Configuration
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                var properties = entityType.ClrType.GetProperties()
+                    .Where(p => p.PropertyType == typeof(DateTime) 
+                        || p.PropertyType == typeof(DateTime?) 
+                        || p.PropertyType == typeof(DateTimeOffset) 
+                        || p.PropertyType == typeof(DateTimeOffset?));
+
+                foreach (var property in properties)
+                        modelBuilder
+                            .Entity(entityType.Name)
+                            .Property(property.Name)
+                            .HasColumnType("timestamp");
+            }
             #endregion
         }
         #endregion

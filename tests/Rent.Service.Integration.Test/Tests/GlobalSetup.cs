@@ -1,4 +1,5 @@
 ﻿using Ductus.FluentDocker.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
@@ -74,7 +75,7 @@ namespace Rent.Service.Integration.Test.Tests
                     var configureServices = new ConfigureServices();
                     var dbContext = configureServices.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                     await dbContext.Database.EnsureDeletedAsync(cancellationToken).ConfigureAwait(false);
-                    await dbContext.Database.EnsureCreatedAsync(cancellationToken).ConfigureAwait(false);
+                    await dbContext.Database.MigrateAsync(cancellationToken).ConfigureAwait(false); 
 
                     if (await dbContext.Database.CanConnectAsync(cancellationToken))
                         return;

@@ -42,7 +42,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
                 Id = "ValidIdentifier",
                 Name = "Test",
                 Cnpj = "29267190000190",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "71418707884",
                 DriverLicenseType = DriverLicenseCategory.B,
                 DriverLicenseBase64Image = "Qk1QAAAAAAQAAAAAAABAAAABAAAAAAAAAAEAAQAAAAAAAAA="

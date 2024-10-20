@@ -46,7 +46,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
                 Id = _deliveryPersonId,
                 Name = "Test",
                 Cnpj = "06724307000111",
-                DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
+                DateOfBirth = DateTime.UtcNow.AddYears(-20),
                 DriverLicenseNumber = "71418707894",
                 DriverLicenseType = DriverLicenseCategory.AB,
             };
@@ -76,9 +76,9 @@ namespace Rent.Service.Integration.Test.Tests.Commands
             {
                 DeliveryPersonId = _deliveryPersonId,
                 MotorcycleId = _motorcycleId,
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(8),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(8),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(8),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(8),
                 Plan = 7
             };
 
@@ -99,7 +99,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
             var command = new RentReturnCommand
             {
                 Id = _rentalId,
-                ReturnDate = DateTimeOffset.UtcNow.AddDays(1)
+                ReturnDate = DateTime.UtcNow.AddDays(1)
             };
 
             // Act
@@ -152,9 +152,9 @@ namespace Rent.Service.Integration.Test.Tests.Commands
             {
                 DeliveryPersonId = _deliveryPersonId,
                 MotorcycleId = _motorcycleId,
-                StartDate = DateTimeOffset.UtcNow.AddDays(1),
-                EndDate = DateTimeOffset.UtcNow.AddDays(51),
-                ExpectedEndDate = DateTimeOffset.UtcNow.AddDays(51),
+                StartDate = DateTime.UtcNow.AddDays(1),
+                EndDate = DateTime.UtcNow.AddDays(51),
+                ExpectedEndDate = DateTime.UtcNow.AddDays(51),
                 Plan = 50
             };
 

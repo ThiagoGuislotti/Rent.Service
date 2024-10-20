@@ -34,12 +34,12 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("cnpj");
 
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("created_at");
 
-                    b.Property<DateTimeOffset>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp")
                         .HasColumnName("date_of_birth");
 
                     b.Property<byte>("DriverLicenseCategory")
@@ -57,8 +57,8 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("name");
 
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("updated_at");
 
                     b.Property<bool>("WithDriverLicenseImage")
@@ -82,8 +82,8 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("id");
 
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("created_at");
 
                     b.Property<string>("LicensePlate")
@@ -97,8 +97,8 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("model");
 
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("updated_at");
 
                     b.Property<short>("Year")
@@ -120,8 +120,8 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("created_at");
 
                     b.Property<string>("EventType")
@@ -145,8 +145,8 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("id");
 
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("created_at");
 
                     b.Property<int>("DailyValue")
@@ -158,12 +158,12 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("delivery_person_id");
 
-                    b.Property<DateTimeOffset>("EndDate")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp")
                         .HasColumnName("end_date");
 
-                    b.Property<DateTimeOffset>("ExpectedEndDate")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("ExpectedEndDate")
+                        .HasColumnType("timestamp")
                         .HasColumnName("expected_end_date");
 
                     b.Property<string>("MotorcycleId")
@@ -175,16 +175,16 @@ namespace Rent.Service.Infrastructure.Migrations
                         .HasColumnType("smallint")
                         .HasColumnName("plan");
 
-                    b.Property<DateTimeOffset?>("ReturnDate")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime?>("ReturnDate")
+                        .HasColumnType("timestamp")
                         .HasColumnName("return_date");
 
-                    b.Property<DateTimeOffset>("StartDate")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("timestamp")
                         .HasColumnName("start_date");
 
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp")
                         .HasColumnName("updated_at");
 
                     b.HasKey("Id");

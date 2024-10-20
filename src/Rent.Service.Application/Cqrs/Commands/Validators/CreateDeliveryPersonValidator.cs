@@ -6,10 +6,10 @@ namespace Rent.Service.Application.Cqrs.Commands.Validators
 {
     public class CreateDeliveryPersonValidator : AbstractValidator<CreateDeliveryPersonCommand>
     {
-        private bool BeAValidAge(DateTimeOffset dateOfBirth)
+        private bool BeAValidAge(DateTime dateOfBirth)
         {
-            int age = DateTimeOffset.UtcNow.Year - dateOfBirth.Year;
-            if (dateOfBirth > DateTimeOffset.UtcNow.AddYears(-age)) age--;
+            int age = DateTime.UtcNow.Year - dateOfBirth.Year;
+            if (dateOfBirth > DateTime.UtcNow.AddYears(-age)) age--;
             return age >= 18;
         }
         public CreateDeliveryPersonValidator()

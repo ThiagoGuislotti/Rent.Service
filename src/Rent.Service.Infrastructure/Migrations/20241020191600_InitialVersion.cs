@@ -17,12 +17,12 @@ namespace Rent.Service.Infrastructure.Migrations
                     id = table.Column<string>(type: "text", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
                     cnpj = table.Column<string>(type: "text", nullable: false),
-                    date_of_birth = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    date_of_birth = table.Column<DateTime>(type: "timestamp", nullable: false),
                     driver_license_number = table.Column<string>(type: "text", nullable: false),
                     driver_license_category = table.Column<byte>(type: "smallint", nullable: false),
                     with_driver_license_image = table.Column<bool>(type: "boolean", nullable: false),
-                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true)
+                    created_at = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,7 +36,7 @@ namespace Rent.Service.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     motorcycle_id = table.Column<string>(type: "text", nullable: false),
                     event_type = table.Column<string>(type: "text", nullable: false),
-                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false)
+                    created_at = table.Column<DateTime>(type: "timestamp", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,8 +51,8 @@ namespace Rent.Service.Infrastructure.Migrations
                     year = table.Column<short>(type: "smallint", nullable: false),
                     model = table.Column<string>(type: "text", nullable: false),
                     license_plate = table.Column<string>(type: "text", nullable: false),
-                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true)
+                    created_at = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -66,14 +66,14 @@ namespace Rent.Service.Infrastructure.Migrations
                     id = table.Column<string>(type: "text", nullable: false),
                     delivery_person_id = table.Column<string>(type: "text", nullable: false),
                     motorcycle_id = table.Column<string>(type: "text", nullable: false),
-                    start_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    end_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    expected_end_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    start_date = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    end_date = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    expected_end_date = table.Column<DateTime>(type: "timestamp", nullable: false),
                     plan = table.Column<byte>(type: "smallint", nullable: false),
                     daily_value = table.Column<int>(type: "integer", nullable: false),
-                    return_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
-                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true)
+                    return_date = table.Column<DateTime>(type: "timestamp", nullable: true),
+                    created_at = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp", nullable: true)
                 },
                 constraints: table =>
                 {

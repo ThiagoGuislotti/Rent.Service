@@ -55,7 +55,7 @@ namespace Rent.Service.Integration.Test.Tests.Services
         public void Should_CalculateTotalRentalCost_WithLateReturn(RentalPlanType planType, int days, int expectedResult)
         {
             // Arrange
-            var startDate = DateTimeOffset.UtcNow.AddDays(1);
+            var startDate = DateTime.UtcNow.AddDays(1);
             var endDate = startDate.AddDays(days + (byte)planType);
 
             // Act
@@ -70,7 +70,7 @@ namespace Rent.Service.Integration.Test.Tests.Services
         {
             // Arrange
             var planType = RentalPlanType.SevenDays;
-            var startDate = DateTimeOffset.Now.AddDays(1);
+            var startDate = DateTime.Now.AddDays(1);
             var endDate = startDate.AddDays(-1);
 
             // Act

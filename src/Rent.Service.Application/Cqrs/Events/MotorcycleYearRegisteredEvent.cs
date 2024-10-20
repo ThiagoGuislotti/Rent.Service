@@ -7,7 +7,7 @@ namespace Rent.Service.Application.Cqrs.Events
     {
         #region Propriedades Públicas
         public required string MotorcycleId { get; init; }
-        public DateTimeOffset EventDate { get; } = DateTimeOffset.UtcNow;
+        public DateTime EventDate { get; } = DateTime.UtcNow;
         #endregion
     }
 }

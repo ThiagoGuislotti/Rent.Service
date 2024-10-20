@@ -12,13 +12,13 @@ namespace Rent.Service.Api.Controllers.SwaggerExamples
                 "Ok",
                 new RentReturnCommand
                 {
-                    ReturnDate = DateTimeOffset.UtcNow.AddDays(2).Date,
+                    ReturnDate = DateTime.UtcNow.AddDays(2).Date,
                 });
             yield return SwaggerExample.Create(
                 "BadRequest",
                 new RentReturnCommand
                 {
-                    ReturnDate = DateTimeOffset.UtcNow.AddDays(-1).Date,
+                    ReturnDate = DateTime.UtcNow.AddDays(-1).Date,
                 });
         }
         #endregion

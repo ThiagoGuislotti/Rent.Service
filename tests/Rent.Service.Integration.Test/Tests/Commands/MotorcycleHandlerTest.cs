@@ -41,7 +41,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
                 Id = "moto123",
                 Model = "S2",
                 LicensePlate = "ABS1234",
-                Year = (short)DateTimeOffset.UtcNow.Year,
+                Year = (short)DateTime.UtcNow.Year,
             };
 
             // Act

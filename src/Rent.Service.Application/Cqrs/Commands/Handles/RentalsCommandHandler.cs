@@ -92,7 +92,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Handles
             entity = entity with
             {
                 ReturnDate = command.ReturnDate,
-                UpdatedAt = DateTimeOffset.UtcNow
+                UpdatedAt = DateTime.UtcNow
             };
 
             var result = await repository
