@@ -101,7 +101,9 @@ namespace Rent.Service.Api.Controllers
         {
             request = request with { Id = id };
             var response = await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
-            return response.Success ? Ok(new MessageResponse() { Message = "Placa modificada com sucesso" }) : BadRequest(new MessageResponse() { Message = response.Message });
+            return response.Success 
+                ? Ok(new MessageResponse() { Message = "Placa modificada com sucesso" }) 
+                : BadRequest(new MessageResponse() { Message = response.Message });
         }
 
         /// <summary>
@@ -118,7 +120,9 @@ namespace Rent.Service.Api.Controllers
         {
             var request = new DeleteMotorcycleCommand() { Id = id };
             var response = await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
-            return response.Success ? Ok(new MessageResponse() { Message = "Moto removida com sucesso" }) : BadRequest(new MessageResponse() { Message = response.Message });
+            return response.Success 
+                ? Ok(new MessageResponse() { Message = "Moto removida com sucesso" }) 
+                : BadRequest(new MessageResponse() { Message = response.Message });
         }
         #endregion
     }

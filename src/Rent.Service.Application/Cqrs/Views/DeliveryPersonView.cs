@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rent.Service.Domain.Enums;
 
 namespace Rent.Service.Application.Cqrs.Views
 {
@@ -22,10 +23,10 @@ namespace Rent.Service.Application.Cqrs.Views
         public required string DriverLicenseNumber { get; init; }
 
         [JsonProperty("tipo_cnh")]
-        public required byte DriverLicenseCategory { get; init; }
+        public required DriverLicenseCategory DriverLicenseCategory { get; init; }
 
         [JsonProperty("com_imagem_cnh")]
-        public string? WithDriverLicenseImage { get; init; }
+        public bool WithDriverLicenseImage { get; init; }
         #endregion
     }
 }

@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using NetToolsKit.Core.Transactions;
 using NetToolsKit.Core.Utils;
 using Rent.Service.Api.Controllers.Abstractions;
+using Rent.Service.Api.Controllers.SwaggerExamples;
 using Rent.Service.Api.Responses;
 using Rent.Service.Application.Cqrs.Commands;
 using Rent.Service.Application.Cqrs.Querys;
 using Rent.Service.Application.Cqrs.Views;
 using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 using System.Collections;
 
 namespace Rent.Service.Api.Controllers
@@ -41,12 +43,15 @@ namespace Rent.Service.Api.Controllers
         [SwaggerOperation(Tags = [ROUTE])]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(MessageResponse))]
+        [SwaggerRequestExample(typeof(CreateRentalCommand), typeof(CreateRentalCommandExample))]
         public async Task<ActionResult> PostAsync(
             [FromBody] CreateRentalCommand request,
             CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
-            return response.Success ? Ok(response.Data) : BadRequest(new MessageResponse() { Message = response.Message });
+            return response.Success 
+                ? Ok(new MessageResponse() { Message = $"Id da localção: [{response.Data}]" }) 
+                : BadRequest(new MessageResponse() { Message = response.Message });
         }
 
         /// <summary>
@@ -93,6 +98,7 @@ namespace Rent.Service.Api.Controllers
         [SwaggerOperation(Tags = [ROUTE])]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MessageResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(MessageResponse))]
+        [SwaggerRequestExample(typeof(RentReturnCommand), typeof(RentReturnCommandExample))]
         public async Task<ActionResult> PutAsync(
             [FromBody] RentReturnCommand request,
             [FromRoute] string id,
@@ -100,7 +106,9 @@ namespace Rent.Service.Api.Controllers
         {
             request = request with { Id = id };
             var response = await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
-            return response.Success ? Ok(new MessageResponse() { Message = $"Valor da locação: R${response.Data}" }) : BadRequest(new MessageResponse() { Message = response.Message });
+            return response.Success
+                ? Ok(new MessageResponse() { Message = $"Valor da locação: R$ {response.Data:F2}" })
+                : BadRequest(new MessageResponse() { Message = response.Message });
         }
         #endregion
     }

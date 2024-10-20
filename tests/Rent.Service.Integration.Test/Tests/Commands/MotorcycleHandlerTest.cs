@@ -40,7 +40,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
             {
                 Id = "moto123",
                 Model = "S2",
-                LicensePlate = "ABS12345",
+                LicensePlate = "ABS1234",
                 Year = (short)DateTimeOffset.UtcNow.Year,
             };
 
@@ -60,7 +60,7 @@ namespace Rent.Service.Integration.Test.Tests.Commands
             var command = new UpdateLicensePlateMotorcycleCommand
             {
                 Id = "moto123",
-                LicensePlate = "ABS12346",
+                LicensePlate = "ABS-1234",
             };
 
             // Act

@@ -18,7 +18,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Validators
             RuleFor(x => x.Name).NotEmpty().Length(2, 100);
             RuleFor(x => x.Cnpj).NotEmpty().IsValidCNPJ();
             RuleFor(x => x.DateOfBirth).NotEmpty().Must(BeAValidAge);
-            RuleFor(x => x.DriverLicenseNumber).NotEmpty().Length(7, 20);
+            RuleFor(x => x.DriverLicenseNumber).NotEmpty().Length(11);
             RuleFor(x => x.DriverLicenseType).IsInEnum();
             RuleFor(x => x.DriverLicenseBase64Image)
                 .Must(x => MimeTypeDetector.GetMimeTypeFromBase64(x) is "png" or "bmp")

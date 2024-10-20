@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using NetToolsKit.Core.Transactions;
 using NetToolsKit.Core.Utils;
 using Rent.Service.Api.Controllers.Abstractions;
+using Rent.Service.Api.Controllers.SwaggerExamples;
 using Rent.Service.Api.Responses;
 using Rent.Service.Application.Cqrs.Commands;
 using Rent.Service.Application.Cqrs.Querys;
 using Rent.Service.Application.Cqrs.Views;
 using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 using System.Collections;
 
 namespace Rent.Service.Api.Controllers
@@ -42,6 +44,7 @@ namespace Rent.Service.Api.Controllers
         [SwaggerOperation(Tags = [ROUTE])]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(MessageResponse))]
+        [SwaggerRequestExample(typeof(CreateDeliveryPersonCommand), typeof(CreateDeliveryPersonCommandExample))]
         public async Task<ActionResult> PostAsync(
             [FromBody] CreateDeliveryPersonCommand request,
             CancellationToken cancellationToken)
@@ -75,6 +78,7 @@ namespace Rent.Service.Api.Controllers
         [SwaggerOperation(Tags = [ROUTE])]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(MessageResponse))]
+        [SwaggerRequestExample(typeof(SendDriverLicenseImageOfDeliveryPersonCommand), typeof(SendDriverLicenseImageOfDeliveryPersonCommandExample))]
         public async Task<ActionResult> PostAsync(
             [FromBody] SendDriverLicenseImageOfDeliveryPersonCommand request,
             [FromRoute] string id,
@@ -82,7 +86,9 @@ namespace Rent.Service.Api.Controllers
         {
             request = request with { Id = id };
             var response = await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
-            return response.Success ? Ok(new MessageResponse() { Message = "Foto da CNH enviada com sucesso" }) : BadRequest(new MessageResponse() { Message = response.Message });
+            return response.Success 
+                ? Ok(new MessageResponse() { Message = "Foto da CNH enviada com sucesso" }) 
+                : BadRequest(new MessageResponse() { Message = response.Message });
         }
         #endregion
     }

@@ -12,7 +12,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Validators
                     .Must(Year => Year > 1900 && Year <= DateTimeOffset.UtcNow.AddYears(2).Year)
                     .WithMessage("O ano do veículo deve ser válido.");
             RuleFor(x => x.Model).NotEmpty().MaximumLength(100).MinimumLength(2);
-            RuleFor(x => x.LicensePlate).NotEmpty().Length(7, 8);
+            RuleFor(x => x.LicensePlate).NotEmpty().Length(7);
         }
     }
 }

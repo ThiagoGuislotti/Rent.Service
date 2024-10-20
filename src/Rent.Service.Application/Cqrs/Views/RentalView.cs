@@ -27,7 +27,7 @@ namespace Rent.Service.Application.Cqrs.Views
         public required byte Plan { get; init; }
 
         [JsonProperty("valor_diaria")]
-        public required string DailyValue { get; init; }
+        public required decimal DailyValue { get; init; }
 
         [JsonProperty("data_devolucao")]
         public DateTimeOffset? ReturnDate { get; init; }

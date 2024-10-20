@@ -20,7 +20,7 @@ namespace Rent.Service.Infrastructure.Services
         #endregion
 
         #region Construtores
-        public RentalPlanService(ILoggerFactory loggerFactory) 
+        public RentalPlanService(ILoggerFactory loggerFactory)
             : base(loggerFactory)
         {
         }
@@ -29,35 +29,36 @@ namespace Rent.Service.Infrastructure.Services
         #region Métodos/Operadores Públicos
         public int CalculateTotalCost(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            if (endDate <= startDate)
-                throw new ArgumentException("A data de término deve ser posterior à data de início.");
+            if (endDate < startDate)
+                throw new ArgumentException("A data de término não deve ser inferior à data de início.");
 
             if (!Enum.IsDefined(typeof(RentalPlanType), planType))
                 throw new ArgumentOutOfRangeException(nameof(planType), planType, null);
 
-            var rentalDays = (endDate - startDate).Days;
+            var rentalDays = GetUsedDays(startDate, endDate);
             var dailyRate = GetDailyValue(planType);
             var totalCost = dailyRate * rentalDays;
 
             var expectedEndDate = GetExpectedEndDate(planType, startDate);
             if (endDate < expectedEndDate)
-                totalCost += CalculatePenalty(planType, expectedEndDate, endDate);
+                totalCost += CalculatePenalty(planType, startDate, endDate);
             else if (endDate > expectedEndDate)
                 totalCost += AdditionalDailyCost * (endDate - expectedEndDate).Days;
 
             return totalCost;
         }
-        public int CalculatePenalty(RentalPlanType planType, DateTimeOffset expectedEndDate, DateTimeOffset endDate)
+
+        public int CalculatePenalty(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            var nonUtilizedDays = (expectedEndDate - endDate).Days;
+            var usedDays = GetUsedDays(startDate, endDate);
+            var unusedDays = (int)planType - usedDays;
             var penaltyRate = planType switch
             {
                 RentalPlanType.SevenDays => SevenDaysPenaltyRate,
                 RentalPlanType.FifteenDays => FifteenDaysPenaltyRate,
                 _ => 0
             };
-
-            return GetDailyValue(planType) * nonUtilizedDays * penaltyRate / 100;
+            return GetDailyValue(planType) * unusedDays * penaltyRate / 100;
         }
 
         public bool CanDeliverMotorcycle(DriverLicenseCategory driverLicenseCategory)
@@ -76,6 +77,11 @@ namespace Rent.Service.Infrastructure.Services
 
         public DateTimeOffset GetExpectedEndDate(RentalPlanType planType, DateTimeOffset startDate)
             => startDate.AddDays((int)planType);
+        #endregion
+
+        #region Métodos/Operadores Privados
+        private static int GetUsedDays(DateTimeOffset startDate, DateTimeOffset endDate)
+            => Math.Max((int)Math.Ceiling((endDate - startDate).TotalDays), 1);
         #endregion
     }
 }

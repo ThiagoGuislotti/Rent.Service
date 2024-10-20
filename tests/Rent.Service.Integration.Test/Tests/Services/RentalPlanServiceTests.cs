@@ -41,7 +41,13 @@ namespace Rent.Service.Integration.Test.Tests.Services
         [TestCase(RentalPlanType.FortyFiveDays, 0, 90000)] // 45 dias de plano sem atraso
         [TestCase(RentalPlanType.FiftyDays, 0, 90000)]    // 50 dias de plano sem atraso
         // Testes com dias abaixo do plano
+        [TestCase(RentalPlanType.SevenDays, -7, 6600)]   // (Devolucao no mesmo dia) dias usados no plano de 7 dias
+        [TestCase(RentalPlanType.SevenDays, -6, 6600)]   // 1 dia usado no plano de 7 dias
+        [TestCase(RentalPlanType.SevenDays, -5, 9000)]   // 2 dias usados no plano de 7 dias
+        [TestCase(RentalPlanType.SevenDays, -4, 11400)]   // 3 dias usados no plano de 7 dias
+        [TestCase(RentalPlanType.SevenDays, -3, 13800)]   // 4 dias usados no plano de 7 dias
         [TestCase(RentalPlanType.SevenDays, -2, 16200)]   // 5 dias usados no plano de 7 dias
+        [TestCase(RentalPlanType.SevenDays, -1, 18600)]   // 6 dias usados no plano de 7 dias
         [TestCase(RentalPlanType.FifteenDays, -5, 33600)] // 10 dias usados no plano de 15 dias
         [TestCase(RentalPlanType.ThirtyDays, -10, 44000)] // 20 dias usados no plano de 30 dias
         [TestCase(RentalPlanType.FortyFiveDays, -15, 60000)] // 30 dias usados no plano de 45 dias
@@ -71,7 +77,7 @@ namespace Rent.Service.Integration.Test.Tests.Services
             Func<int> action = () => _rentalPlanService.CalculateTotalCost(planType, startDate, endDate);
 
             // Assert
-            action.Should().Throw<ArgumentException>().WithMessage("A data de término deve ser posterior à data de início.");
+            action.Should().Throw<ArgumentException>().WithMessage("A data de término não deve ser inferior à data de início.");
         }
 
         [TestCase(DriverLicenseCategory.A, true)]

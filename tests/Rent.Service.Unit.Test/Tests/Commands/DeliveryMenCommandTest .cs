@@ -25,17 +25,19 @@ namespace Rent.Service.Unit.Test.Tests.Commands
 
         #region Test Create Valid Cases
 
-        [Fact]
-        public void CreateDeliveryPersont_ValidData_ShouldBeValid()
+        [Theory]
+        [InlineData("22055776000141")]
+        [InlineData("61.360.756/0001-36")]
+        public void CreateDeliveryPersont_ValidData_ShouldBeValid(string cnpj)
         {
             // Arrange
             var request = new CreateDeliveryPersonCommand
             {
                 Id = "ValidIdentifier",
                 Name = "Thiago Guislotti",
-                Cnpj = "22055776000141",
+                Cnpj = cnpj,
                 DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
-                DriverLicenseNumber = "1234567",
+                DriverLicenseNumber = "71418707884",
                 DriverLicenseType = DriverLicenseCategory.B,
                 DriverLicenseBase64Image = "Qk1QAAAAAAQAAAAAAABAAAABAAAAAAAAAAEAAQAAAAAAAAA="
             };

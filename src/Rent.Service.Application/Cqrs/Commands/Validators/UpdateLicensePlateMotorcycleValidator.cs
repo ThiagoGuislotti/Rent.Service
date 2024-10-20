@@ -6,7 +6,7 @@ namespace Rent.Service.Application.Cqrs.Commands.Validators
     {
         public UpdateLicensePlateMotorcycleValidator()
         {
-            RuleFor(x => x.LicensePlate).NotEmpty().Length(7, 8);
+            RuleFor(x => x.LicensePlate).NotEmpty().Length(7);
         }
     }
 }

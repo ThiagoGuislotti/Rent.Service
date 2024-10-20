@@ -7,7 +7,7 @@ namespace Rent.Service.Application.Services
         #region Métodos/Operadores Públicos   
         int GetDailyValue(RentalPlanType planType);
         int CalculateTotalCost(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate);
-        int CalculatePenalty(RentalPlanType planType, DateTimeOffset expectedEndDate, DateTimeOffset endDate);
+        int CalculatePenalty(RentalPlanType planType, DateTimeOffset startDate, DateTimeOffset endDate);
         bool CanDeliverMotorcycle(DriverLicenseCategory driverLicenseCategory);
         DateTimeOffset GetExpectedEndDate(RentalPlanType planType, DateTimeOffset startDate);
         #endregion

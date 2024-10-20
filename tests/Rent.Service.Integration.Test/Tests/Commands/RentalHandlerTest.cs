@@ -47,14 +47,14 @@ namespace Rent.Service.Integration.Test.Tests.Commands
                 Name = "Test",
                 Cnpj = "06724307000111",
                 DateOfBirth = DateTimeOffset.UtcNow.AddYears(-20),
-                DriverLicenseNumber = "43249940153",
+                DriverLicenseNumber = "71418707894",
                 DriverLicenseType = DriverLicenseCategory.AB,
             };
             var motorcycleCommand = new CreateMotorcycleCommand
             {
                 Id = _motorcycleId,
                 Model = "S2",
-                LicensePlate = "ABS12345",
+                LicensePlate = "ABS-1245",
                 Year = 2024,
             };
             var result = await _mediator.Send(deliveryPersonCommand).ConfigureAwait(false);

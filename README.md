@@ -81,7 +81,7 @@ A aplicação segue os princípios de **Clean Architecture** e adota o padrão *
         - 45 dias com um custo de R$20,00 por dia
         - 50 dias com um custo de R$18,00 por dia
    - A locação obrigatóriamente tem que ter uma data de inicio e uma data de término e outra data de previsão de término.
-   - O inicio da locação obrigatóriamente é o primeiro dia após a data de criação.
+   - O inicio da locação obrigatóriamente é o primeiro dia após a data de criação, ou seja, as 00:00 do primeiro após a data de criação.
    - Somente entregadores habilitados na categoria A podem efetuar uma locação.
    - Consultar valor total da locação com possibilidade de multa por devolução antecipada ou atraso.
         - Quando a data informada for inferior a data prevista do término, será cobrado o valor das diárias e uma multa adicional

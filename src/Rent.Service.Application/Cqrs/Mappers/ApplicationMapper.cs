@@ -20,7 +20,8 @@ namespace Rent.Service.Application.Cqrs.Mappers
                 .ReverseMap();
 
             // Rental
-            CreateMap<Rental, RentalView>();
+            CreateMap<Rental, RentalView>()
+                .ForMember(d => d.DailyValue, s => s.MapFrom(src => Math.Round((decimal)src.DailyValue / 100, 2)));
             CreateMap<CreateRentalCommand, Rental>()
                 .ReverseMap();
         }

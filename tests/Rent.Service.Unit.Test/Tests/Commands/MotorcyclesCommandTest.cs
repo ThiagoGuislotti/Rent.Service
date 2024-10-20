@@ -26,8 +26,10 @@ namespace Rent.Service.Unit.Test.Tests.Commands
         #region Test Create Valid Cases
 
         [Theory]
-        [InlineData("ABC123", 2020, "Honda", "ABC1234D")]
-        [InlineData("XYZ456", 2015, "Yamaha", "XYZ7890E")]
+        [InlineData("123456", 2020, "Honda", "ABC1234")]
+        [InlineData("12", 2015, "Yamaha", "XYZ890E")]
+        [InlineData("ABC-", 2020, "Honda", "ABC-1234")]
+        [InlineData("-564", 2015, "Yamaha", "XYZ-78-0E")]
         public void CreateMotorcycles_ValidData_ShouldBeValid(string id, short year, string model, string licensePlate)
         {
             // Arrange
@@ -159,8 +161,10 @@ namespace Rent.Service.Unit.Test.Tests.Commands
         #region Test Update Valid Cases
 
         [Theory]
-        [InlineData("ABC1234D")]
-        [InlineData("XYZ7890E")]
+        [InlineData("ABC123D")]
+        [InlineData("XYZ789E")]
+        [InlineData("ABC-123D")]
+        [InlineData("XYZ---789E")]
         public void UpdateMotorcycles_ValidVehiclePlate_ShouldBeValid(string licensePlate)
         {
             // Arrange
