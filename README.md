@@ -157,7 +157,7 @@ Para executar a aplicação, utilize os seguintes comandos no diretório raiz:
 
 ```bash
 # Construir e executar os serviços no Docker
-docker compose -f docker/docker-compose.yml up -d
+docker compose -f docker/docker-compose.yaml up -d
 ```
 
 ### Acessando os Serviços
